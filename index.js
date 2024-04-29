@@ -1,13 +1,14 @@
 import inquirer from 'inquirer';
+import chalk from 'chalk';
 let todos = [];
 let condition = true;
-console.log("\n\t Welcome to Saood's Todo List! \t\n");
+console.log(chalk.magenta.bold("\n\t Welcome to Saood's Todo List! \t\n"));
 while (condition) {
     let addTodo = await inquirer.prompt([
         {
             name: "todo",
             type: "input",
-            message: "Enter your Todo"
+            message: chalk.yellow("Enter your Todo")
         }
     ]);
     todos.push(addTodo.todo);
